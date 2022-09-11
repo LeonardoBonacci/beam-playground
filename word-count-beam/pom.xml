@@ -343,6 +343,17 @@
   </profiles>
 
   <dependencies>
+  	<dependency>
+	    <groupId>org.apache.kafka</groupId>
+	    <artifactId>kafka-clients</artifactId>
+	    <version>2.5.0</version>
+	</dependency>
+  	<dependency>
+	    <groupId>org.apache.beam</groupId>
+	    <artifactId>beam-sdks-java-io-kafka</artifactId>
+	    <version>${beam.version}</version>
+	</dependency>
+  
     <!-- Adds a dependency on the Beam SDK. -->
     <dependency>
       <groupId>org.apache.beam</groupId>

@@ -16,6 +16,7 @@ public class PrintFn extends DoFn<String, String> {
   
   @ProcessElement
   public void processElement(@Element String in, OutputReceiver<String> out) {
+    System.out.println("-------------------------------");
     System.out.println(prefix + " " + in);
     out.output(in);
   }
