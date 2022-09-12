@@ -28,13 +28,12 @@ public class KafkaRead {
        .withoutMetadata() 
     );
     
-
     fromKafka
       .apply(
         MapElements.into(TypeDescriptors.strings())
           .via(
               (KV<String, String> kv) -> 
-                kv.getKey() + " " + kv.getValue()))
+                kv.getKey() + "<>" + kv.getValue()))
     .apply(ParDo.of(new PrintFn()));
     
     p.run().waitUntilFinish();

@@ -16,8 +16,10 @@ public class App {
 	@Bean
   CommandLineRunner demo(KafkaTemplate<String, String> kafkaTemplate) {
     return args -> {
-      for (int i=0; i<10; i++) 
-        kafkaTemplate.send("foo", "bar" + i).get();
+      for (int i=0; i<20; i++) {
+        kafkaTemplate.send("foo", "bar", "bar").get();
+        Thread.sleep(1000);
+      }  
       System.out.println("done");
       System.exit(0);
     };
